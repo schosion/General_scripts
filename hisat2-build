@@ -21,10 +21,13 @@ date
 # load software
 module load hisat2/2.2.0
 
-# input/output directories
+# *** VARIABLE *** # location of output files
+# input/output directories 
 OUTDIR=~/pilot_evolution/genomes/chm13_dm-hisat2-index
 mkdir -p $OUTDIR
 
+# *** VARIABLE *** # location of genome file
 GENOME=~/pilot_evolution/genomes/chm13_dm.fa
 
+# *** VARIABLE *** # naming of index
 hisat2-build -p 20 $GENOME $OUTDIR/chm13_dm
