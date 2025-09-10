@@ -1,0 +1,21 @@
+#!/bin/bash
+#SBATCH --job-name=unzip_genome
+#SBATCH -n 1
+#SBATCH -N 1
+#SBATCH -c 16
+#SBATCH --mem=100G
+#SBATCH --partition=general
+#SBATCH --qos=general
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=username@uconn.edu
+#SBATCH -o %x_%j.out
+#SBATCH -e %x_%j.err
+
+echo `hostname`
+date
+
+#################################################################
+# Unzip the Genome #index building requires unzipped genome
+#################################################################
+
+gzip -d  ~/pilot_evolution/genomes/chm13v2.0.fa.gz
